@@ -1,64 +1,124 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela com Imagem</title>
+    <title>Editor de Texto</title>
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Faz a altura ocupar 100% da tela */
         }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
             text-align: center;
         }
-        img {
-            width: 70px; /* Ajuste o tamanho da imagem */
-            height: auto;
-            vertical-align: middle;
+
+        #title {
+            background-color: transparent;
+            color: white;
+            font-size: 24px;
+            border: none;
+            text-align: center;
+            width: 100%;
         }
-        .editable {
-            cursor: pointer;
+
+        main {
             display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Faz a área principal crescer para ocupar o espaço restante */
+            padding: 20px;
+            justify-content: flex-start; /* Alinha os editores no topo */
+            gap: 20px; /* Adiciona espaço entre os editores */
+        }
+
+        .editor-container {
+            display: flex;
+            justify-content: space-between; /* Alinha o editor e a imagem lado a lado */
             align-items: center;
-            justify-content: center;
-            gap: 8px;
+            gap: 10px; /* Espaço entre o editor e a imagem */
+        }
+
+        .editor {
+            width: 90%;
+            height: 60px; /* Reduzindo ainda mais a altura dos editores */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: none; /* Impede que o usuário redimensione o editor */
+        }
+
+        .image-container {
+            width: 10%; /* Controlando o tamanho da imagem */
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 50px; /* Definindo a largura da imagem */
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Estilo para o editor de demandas */
+        .demand-container {
+            display: flex;
+            justify-content: center; /* Centraliza o editor na tela */
+            align-items: center;
+            gap: 10px;
+            margin-top: auto; /* Empurra para o final da tela */
+        }
+
+        .demand-container .editor {
+            width: 80%; /* Menor do que os outros editores */
+            height: 100px; /* Aumenta a altura para dar mais espaço */
         }
     </style>
-    <script>
-        function enableEditing(event) {
-            let cell = event.target;
-            let text = cell.innerText;
-            let input = document.createElement("input");
-            input.type = "text";
-            input.value = text;
-            input.onblur = function() {
-                cell.innerText = input.value;
-                cell.classList.add("editable");
-            };
-            cell.innerText = "";
-            cell.appendChild(input);
-            input.focus();
-            cell.classList.remove("editable");
-        }
-    </script>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>DEMANDA</th>
-        </tr>
-        <tr>
-            <td class="editable" onclick="enableEditing(event)"><img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Imagem 1"> Ana</td>
-        </tr>
-        <tr>
-            <td class="editable" onclick="enableEditing(event)"><img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Imagem 2"> Bruno</td>
-        </tr>
-        <tr>
-            <td class="editable" onclick="enableEditing(event)"><img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Imagem 3"> Carla</td>
-        </tr>
-    </table>
+
+    <header>
+        <input type="text" id="title" value="DEMANDAS" placeholder="Digite o título aqui...">
+    </header>
+
+    <main>
+        <div class="editor-container">
+            <textarea class="editor" id="editor1" placeholder="Digite o primeiro texto aqui..."></textarea>
+            <div class="image-container">
+                <img src="https://tm.ibxk.com.br/2019/02/17/17124052466014.jpg" alt="Imagem Exemplo">
+            </div>
+        </div>
+        <div class="editor-container">
+            <textarea class="editor" id="editor2" placeholder="Digite o segundo texto aqui..."></textarea>
+            <div class="image-container">
+                <img src="https://tm.ibxk.com.br/2019/02/17/17124052466014.jpg" alt="Imagem Exemplo">
+            </div>
+        </div>
+        <div class="editor-container">
+            <textarea class="editor" id="editor3" placeholder="Digite o terceiro texto aqui..."></textarea>
+            <div class="image-container">
+                <img src="https://tm.ibxk.com.br/2019/02/17/17124052466014.jpg" alt="Imagem Exemplo">
+            </div>
+        </div>
+
+        <!-- Editor de demandas -->
+        <div class="demand-container">
+            <textarea class="editor" id="demandEditor" placeholder="Digite sua demanda aqui..."></textarea>
+            <div class="image-container">
+                <img src="https://tm.ibxk.com.br/2019/02/17/17124052466014.jpg" alt="Imagem Exemplo">
+            </div>
+        </div>
+    </main>
+
 </body>
 </html>
+
+
+
