@@ -12,6 +12,7 @@
             display: flex;
             flex-direction: column;
             height: 100vh; /* Faz a altura ocupar 100% da tela */
+            border: 3px solid #333; /* Adicionando borda ao redor da tela */
         }
 
         header {
@@ -19,6 +20,7 @@
             color: white;
             padding: 38px;
             text-align: center;
+            border-bottom: 2px solid #333; /* Borda inferior para o header */
         }
 
         #title {
@@ -37,6 +39,7 @@
             padding: 20px;
             justify-content: flex-start; /* Alinha os editores no topo */
             gap: 20px; /* Adiciona espaço entre os editores */
+            border-top: 2px solid #333; /* Borda superior para o main */
         }
 
         .editor-container {
@@ -44,6 +47,9 @@
             justify-content: space-between; /* Alinha o editor e a imagem lado a lado */
             align-items: center;
             gap: 10px; /* Espaço entre o editor e a imagem */
+            border: 2px solid #ccc; /* Borda em torno de cada container */
+            border-radius: 8px;
+            padding: 10px;
         }
 
         .editor {
@@ -74,6 +80,9 @@
             align-items: center;
             gap: 10px; /* Espaço entre a imagem e o editor */
             margin-top: 50px; /* Espaço adicional para mover o editor para baixo */
+            border: 2px solid #ccc; /* Borda em torno do último editor */
+            border-radius: 8px;
+            padding: 10px;
         }
 
     </style>
@@ -108,3 +117,4 @@
 
 </body>
 </html>
+
