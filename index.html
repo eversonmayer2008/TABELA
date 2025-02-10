@@ -67,19 +67,15 @@
             border-radius: 5px;
         }
 
-        /* Estilo para o editor de demandas */
-        .demand-container {
+        /* Estilo para o último editor de texto */
+        .last-editor-container {
             display: flex;
-            justify-content: center; /* Centraliza o editor na tela */
+            justify-content: center; /* Centraliza os elementos dentro do container */
             align-items: center;
-            gap: 10px;
-            margin-top: auto; /* Empurra para o final da tela */
+            gap: 10px; /* Espaço entre a imagem e o editor */
+            margin-top: 50px; /* Espaço adicional para mover o editor para baixo */
         }
 
-        .demand-container .editor {
-            width: 80%; /* Menor do que os outros editores */
-            height: 100px; /* Aumenta a altura para dar mais espaço */
-        }
     </style>
 </head>
 <body>
@@ -98,28 +94,17 @@
         <div class="editor-container">
             <textarea class="editor" id="editor2" placeholder="Digite o segundo texto aqui..."></textarea>
             <div class="image-container">
-                <img src="https://tm.ibxk.com.br/2019/02/17/17124052466014.jpg" alt="Imagem Exemplo">
+                <img src="https://files.tecnoblog.net/wp-content/uploads/2019/02/thispersondoesnotexist.jpg" alt="Imagem Exemplo">
             </div>
         </div>
-        <div class="editor-container">
+        <!-- Último editor com a imagem à esquerda, centralizado -->
+        <div class="last-editor-container">
+            <div class="image-container">
+                <img src="https://tm.ibxk.com.br/2019/02/17/17124052466014.jpg" alt="Imagem Exemplo">
+            </div>
             <textarea class="editor" id="editor3" placeholder="Digite o terceiro texto aqui..."></textarea>
-            <div class="image-container">
-                <img src="https://tm.ibxk.com.br/2019/02/17/17124052466014.jpg" alt="Imagem Exemplo">
-            </div>
-        </div>
-
-        <!-- Editor de demandas -->
-        <div class="demand-container">
-            <textarea class="editor" id="demandEditor" placeholder="Digite sua demanda aqui..."></textarea>
-            <div class="image-container">
-                <img src="https://tm.ibxk.com.br/2019/02/17/17124052466014.jpg" alt="Imagem Exemplo">
-            </div>
         </div>
     </main>
 
 </body>
 </html>
-
-
-
-
