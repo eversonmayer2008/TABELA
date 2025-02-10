@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela com Imagem</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        img {
+            width: 70px; /* Ajuste o tamanho da imagem */
+            height: auto;
+            vertical-align: middle;
+        }
+        .editable {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+    </style>
+    <script>
+        function enableEditing(event) {
+            let cell = event.target;
+            let text = cell.innerText;
+            let input = document.createElement("input");
+            input.type = "text";
+            input.value = text;
+            input.onblur = function() {
+                cell.innerText = input.value;
+                cell.classList.add("editable");
+            };
+            cell.innerText = "";
+            cell.appendChild(input);
+            input.focus();
+            cell.classList.remove("editable");
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>DEMANDA</th>
+        </tr>
+        <tr>
+            <td class="editable" onclick="enableEditing(event)"><img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Imagem 1"> Ana</td>
+        </tr>
+        <tr>
+            <td class="editable" onclick="enableEditing(event)"><img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Imagem 2"> Bruno</td>
+        </tr>
+        <tr>
+            <td class="editable" onclick="enableEditing(event)"><img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Imagem 3"> Carla</td>
+        </tr>
+    </table>
+</body>
+</html>
