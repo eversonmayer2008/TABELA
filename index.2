@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Faz a altura ocupar 100% da tela */
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 38px;
+            text-align: center;
+        }
+
+        #title {
+            background-color: transparent;
+            color: white;
+            font-size: 30px;
+            border: none;
+            text-align: center;
+            width: 100%;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Faz a área principal crescer para ocupar o espaço restante */
+            padding: 20px;
+            justify-content: flex-start; /* Alinha os editores no topo */
+            gap: 20px; /* Adiciona espaço entre os editores */
+        }
+
+        .editor-container {
+            display: flex;
+            justify-content: space-between; /* Alinha o editor e a imagem lado a lado */
+            align-items: center;
+            gap: 10px; /* Espaço entre o editor e a imagem */
+        }
+
+        .editor {
+            width: 90%;
+            height: 60px; /* Reduzindo ainda mais a altura dos editores */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: none; /* Impede que o usuário redimensione o editor */
+        }
+
+        .image-container {
+            width: 10%; /* Controlando o tamanho da imagem */
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 50px; /* Definindo a largura da imagem */
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Estilo para o último editor de texto */
+        .last-editor-container {
+            display: flex;
+            justify-content: center; /* Centraliza os elementos dentro do container */
+            align-items: center;
+            gap: 10px; /* Espaço entre a imagem e o editor */
+            margin-top: 50px; /* Espaço adicional para mover o editor para baixo */
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <input type="text" id="title"  placeholder="Nome da Demanda">
+    </header>
+
+    <main>
+        <div class="editor-container">
+            <textarea class="editor" id="editor1" placeholder="Digite o primeiro texto aqui..."></textarea>
+            <div class="image-container">
+                <img src="https://tm.ibxk.com.br/2019/02/17/17124052466014.jpg" alt="Imagem Exemplo">
+            </div>
+        </div>
+        <div class="editor-container">
+            <textarea class="editor" id="editor2" placeholder="Digite o segundo texto aqui..."></textarea>
+            <div class="image-container">
+                <img src="https://files.tecnoblog.net/wp-content/uploads/2019/02/thispersondoesnotexist.jpg" alt="Imagem Exemplo">
+            </div>
+        </div>
+        <!-- Último editor com a imagem à esquerda, centralizado -->
+        <div class="last-editor-container">
+            <div class="image-container">
+                <img src="https://tm.ibxk.com.br/2019/02/17/17124052466014.jpg" alt="Imagem Exemplo">
+            </div>
+            <textarea class="editor" id="editor3" placeholder="Digite o terceiro texto aqui..."></textarea>
+        </div>
+    </main>
+
+</body>
+</html>
